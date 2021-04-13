@@ -9,7 +9,7 @@ public:
 public:
 	friend ostream &operator<<(ostream &out,Complex &c);
 	friend Complex operator+(const Complex &c1,const Complex &c2);
-	operator double() const {return m_real;}//ÀàÐÍ×ª»»º¯Êý
+	operator double() const {return m_real;}//ç±»åž‹è½¬æ¢å‡½æ•°
 private:
 	double m_real;
 	double m_imag;
@@ -40,12 +40,9 @@ int main()
 	f = 12.5 + c1;
 	
 	#if 0
-	¼´¿ÉÒÔ¶Ô12.5µ÷ÓÃ×ª»»¹¹Ôìº¯Êý£¬Ò²¿ÉÒÔ¶Ôc1Ö´ÐÐÀàÐÍ×ª»»º¯Êý£¬ËùÒÔÔì³ÉÁË¶þÒåÐÔ
+	å³å¯ä»¥å¯¹12.5è°ƒç”¨è½¬æ¢æž„é€ å‡½æ•°ï¼Œä¹Ÿå¯ä»¥å¯¹c1æ‰§è¡Œç±»åž‹è½¬æ¢å‡½æ•°ï¼Œæ‰€ä»¥é€ æˆäº†äºŒä¹‰æ€§
 	#endif
 	
-	
-	Complex c2 = c1 + 46.7;
-	
+	Complex c2 = c1 + 46.7;	
 	return 0;
 }
-
