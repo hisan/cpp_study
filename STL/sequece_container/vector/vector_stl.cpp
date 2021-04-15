@@ -7,6 +7,7 @@ using namespace std;
 void ope_test()
 {
 	vector<int> v;
+	vector<int> v;
 	v.push_back(10);
 	v.push_back(20);
 	v.push_back(30);

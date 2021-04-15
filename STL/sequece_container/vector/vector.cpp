@@ -193,66 +193,119 @@ void get_vector_elem()
 }
 
 
+typedef struct 
+{
+	int a;
+	int b;
+	char c;
+}node;
 
+void del_vector()
+{
+	cout<<"node:"<<sizeof(node)<<endl;
+	int a = 10;
+	int b = 20;
+	char c = 'a';
+	
+	vector<node> nvec{{a++,b++,c++},{a++,b++,c++},{a++,b++,c++},{a++,b++,c++}};
+	
+	cout<<endl;
+	for (auto &nd:nvec)
+	{
+		cout<<"a:"<<nd.a<<" b:"<<nd.b<<" char:"<<nd.c<<endl;
+	}
+	cout<<endl;
+	
+	#if 0
+	node:12
+	a:10 b:20 char:a
+	a:11 b:21 char:b
+	a:12 b:22 char:c
+	a:13 b:23 char:d
+	#endif
+
+	
+	nvec.pop_back();
+	cout<<endl;
+	for (auto &nd:nvec)
+	{
+		cout<<"a:"<<nd.a<<" b:"<<nd.b<<" char:"<<nd.c<<endl;
+	}
+	cout<<endl;
+	
+	#if 0
+	a:10 b:20 char:a
+	a:11 b:21 char:b
+	a:12 b:22 char:c
+	#endif
+	
+	vector<node>::iterator nitr = nvec.begin();
+	
+	nvec.erase(nitr);
+	cout<<endl;
+	for (auto &nd:nvec)
+	{
+		cout<<"a:"<<nd.a<<" b:"<<nd.b<<" char:"<<nd.c<<endl;
+	}
+	cout<<endl;
+	
+	#if 0
+	a:11 b:21 char:b
+	a:12 b:22 char:c
+	#endif
+	
+	vector<node> ntmp{{111,222,'A'}};
+	
+	
+	ntmp.swap(nvec);
+	cout<<endl;
+	for (auto &nd:nvec)
+	{
+		cout<<"a:"<<nd.a<<" b:"<<nd.b<<" char:"<<nd.c<<endl;
+	}
+	cout<<endl;
+	
+	#if 0
+	a:111 b:222 char:A
+	#endif
+	
+	cout<<endl;
+	for (auto &nd:ntmp)
+	{
+		cout<<"a:"<<nd.a<<" b:"<<nd.b<<" char:"<<nd.c<<endl;
+	}
+	cout<<endl;
+	
+	#if 0
+	a:11 b:21 char:b
+	a:12 b:22 char:c
+	#endif
+	
+	ntmp.clear();
+	cout<<endl;
+	
+	cout<<"ntmp.size: "<<ntmp.size()<<endl;
+	cout<<endl;
+	
+	#if 0
+	ntmp.size: 0
+	#endif
+}
+
+void bool_vec()
+{
+	vector<bool> bvec{0,1};
+	bool *bp = &bvec[0];
+	
+	#if 0
+	error1: taking address of temporary
+	error2: cannot convert ¡®std::vector<bool>::reference* {aka std::_Bit_reference*}¡¯ to ¡®bool*¡¯ in initialization
+	#endif
+	
+}
 
 int main()
 {
-	get_vector_elem();
+	bool_vec();
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
